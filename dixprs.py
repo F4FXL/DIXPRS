@@ -1128,7 +1128,9 @@ if __name__ == '__main__':
                                     nrport = dixlibsql.GetGatedPort(igtfrm[0])
 
                                     if nrport >= 0:
-                                        radioports[nrport].sendgate('}' + igttxt)
+                                        axg = [igtfrm[0], igtfrm[1], [['TCPIP', 0], [cvars.get('genCFGcall'), 1]], igtfrm[3]]                        
+                                        gts = dixlibax25.vir2txt(axg)
+                                        radioports[nrport].sendgate('}' + gts)
 
                             #-----------------------------------------------
                             # Process messages received via Internet Gateway
