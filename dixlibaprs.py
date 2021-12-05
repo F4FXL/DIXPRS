@@ -55,6 +55,17 @@ def IsPosition(frm):
         
     return False
         
+def IsMessage(frm):
+    if len(frm) < 4:
+        return False
+    
+    if len(frm[3]) == 0:
+        return False
+
+    if frm[3][0] == ':':
+        return True
+
+    return False
 
 ###############################################################################
 ###############################################################################

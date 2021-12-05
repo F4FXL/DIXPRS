@@ -1134,7 +1134,7 @@ if __name__ == '__main__':
                             # Process messages received via Internet Gateway
                             #-----------------------------------------------
     
-                            if igtfrm[3][0] == ':':
+                            if dixlibaprs.IsMessage(igtfrm):
                                 destcal = dixlibmsg.GetDestcall(igtfrm[3])
                                 destpos = dixlibsql.getdbpos(destcal)
                                 dixlibmsg.msgproc((-1, igtfrm))
